@@ -26,15 +26,12 @@ class Loyalty extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  height: 150,
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/loyalty.png'),
-                    ),
+              Container(
+                height: 150,
+                width: double.infinity,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/loyalty.png'),
                   ),
                 ),
               ),
@@ -102,8 +99,8 @@ class Loyalty extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(60),
                   border: Border.all(
-                    color: Color(0xFFFFFFFF), // Màu viền
-                    width: 2, // Độ dày viền
+                    color: Color(0xFFFFFFFF),
+                    width: 2,
                   ),
                 ),
                 child: Padding(
