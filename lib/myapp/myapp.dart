@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pages_zendvn/pages/b3_flutter/interface.dart';
+import 'package:pages_zendvn/pages/b3_flutter/rolls.dart';
+import 'package:pages_zendvn/pages/b3_flutter/traing.dart';
+import 'package:pages_zendvn/pages/b3_flutter/weather.dart';
 import 'package:pages_zendvn/pages/jobs.dart';
 import 'package:pages_zendvn/pages/loyalty.dart';
 import 'package:pages_zendvn/pages/socials.dart';
@@ -26,7 +30,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const Jobs(),
+      child: const Interface(),
     );
   }
 }
