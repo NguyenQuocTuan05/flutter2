@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.2.1
   font_awesome_flutter: ^10.7.0
   flutter_social_button: ^1.1.4+1
+  modal_bottom_sheet: ^3.0.0
 
 dev_dependencies:
   flutter_test:

@@ -36,7 +36,7 @@ class Traing extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(15.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,11 +45,12 @@ class Traing extends StatelessWidget {
               aspectRatio: 2 / 1,
               child: Container(
                 decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(100),
-                      bottomLeft: Radius.circular(60),
-                    ),
-                    color: Colors.amber),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(100),
+                    bottomLeft: Radius.circular(60),
+                  ),
+                  color: Colors.amber,
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
@@ -65,24 +66,18 @@ class Traing extends StatelessWidget {
                           fontSize: 20,
                         ),
                       ),
-                      const SizedBox(
-                        height: 30,
-                      ),
+                      const Spacer(),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Row(
-                            children: [
-                              Icon(
-                                Icons.exit_to_app_sharp,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text('ZendVN'),
-                            ],
+                          const Icon(
+                            Icons.exit_to_app_sharp,
+                            color: Colors.white,
                           ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const Text('ZendVN'),
+                          const Spacer(),
                           Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(60),
@@ -128,57 +123,51 @@ class Traing extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Expanded(
-                child: GridView.count(
-              crossAxisCount: 2,
-              children: [
-                listText(),
-                listText(),
-                listText(),
-                listText(),
-                listText(),
-                listText(),
-                listText(),
-                listText(),
-                listText(),
-                listText(),
-              ],
-            ))
+            GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
+                  childAspectRatio: 1.2 / 2),
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int index) {
+                return listText();
+              },
+            )
           ],
         ),
       ),
     );
   }
 
-  Padding listText() {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: const Color.fromARGB(255, 252, 243, 243),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          child: Column(
-            children: [
-              Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    color: Colors.amber),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              const Text(
-                'Assumenda velit voluptates exercitationem animi omnis expedita.',
-                style: TextStyle(color: Colors.black),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
+  Container listText() {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: const Color.fromARGB(255, 118, 45, 45),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        child: Column(
+          children: [
+            Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.amber),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Text(
+              'Assumenda velit voluptates exercitationem animi omnis expedita exercitationem animi omnis expedita.',
+              style: TextStyle(color: Colors.black),
+              textAlign: TextAlign.center,
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
         ),
       ),
     );
